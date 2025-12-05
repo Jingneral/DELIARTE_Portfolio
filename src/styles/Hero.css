@@ -1,47 +1,43 @@
-/* ----------- HERO SECTION FIXED ------------ */
-
 .hero-wrapper {
-  width: 100%;
-  min-height: 90vh;
-  padding: 4rem 6rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 4rem 6rem;
+  min-height: 90vh;
   position: relative;
   background: white;
-  overflow: hidden;
 }
 
-/* LEFT SIDE ---------------------------------- */
-
+/* TEXT SECTION */
 .hero-left {
   flex: 1;
-  z-index: 3;
+  z-index: 2;
 }
 
 .hero-intro {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #6b46c1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-name {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
-  color: #0f172a;
-  margin: 0;
+  margin: 0.5rem 0;
   line-height: 1.1;
+  color: #0f172a;
+  text-align: left;
 }
 
-/* Typing animation (full name: 22 characters) */
 .typing-text {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   width: 22ch;
   border-right: 4px solid #6b46c1;
-  animation: typing 2.8s steps(22, end), blink .7s step-end infinite;
+  animation: typing 2.8s steps(22, end), blink 0.7s step-end infinite;
 }
 
 @keyframes typing {
@@ -54,25 +50,23 @@
 }
 
 .hero-role {
-  margin-top: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #475569;
-  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
 .hero-buttons {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .contact-btn {
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   border-radius: 12px;
   background: linear-gradient(90deg, #6b46c1, #4c1d95);
   color: white;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 10px 25px rgba(99,102,241,0.25);
   transition: 0.2s ease;
 }
 
@@ -81,231 +75,82 @@
   box-shadow: 0 18px 40px rgba(99,102,241,0.25);
 }
 
-/* RIGHT SIDE -------------------------------- */
-
+/* IMAGE SECTION */
 .hero-right {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-/* Purple background circle */
 .circle-bg {
   position: absolute;
-  width: 420px;
-  height: 420px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  right: 0;
   background: radial-gradient(circle at 30% 30%, #9b5bfd, #6b46c1, #4c1d95);
-  filter: blur(0px);
   z-index: 1;
 }
 
-/* Profile image */
 .profile-img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  border: 8px solid white;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  object-fit: cover;
+  border: 6px solid white;
+  z-index: 2;
   position: relative;
-  z-index: 3;
 }
 
-/* ----------------- RESPONSIVE ----------------- */
-
-@media (max-width: 1024px) {
+/* RESPONSIVE STYLING */
+@media (max-width: 950px) {
   .hero-wrapper {
-    padding: 3rem 3rem;
-  }
-  .hero-name {
-    font-size: 3rem;
-  }
-  .profile-img {
-    width: 260px;
-    height: 260px;
-  }
-  .circle-bg {
-    width: 350px;
-    height: 350px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
-    padding: 2rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
     min-height: auto;
   }
 
   .hero-left {
-    margin-top: 2rem;
+    margin-top: 20px;
+    text-align: center;
   }
 
   .hero-name {
-    font-size: 2.4rem;
+    font-size: 40px;
+    line-height: 1.2;
   }
 
   .hero-role {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 
-  .profile-img {
-    width: 220px;
-    height: 220px;
+  .hero-buttons {
+    justify-content: center;
+    display: flex;
+  }
+
+  /* ADD TOP MARGIN TO IMAGE */
+  .hero-right {
+    margin-top: 30px;  /* ← This adds space above the image */
+    margin-bottom: 20px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .circle-bg {
-    width: 260px;
-    height: 260px;
-    right: auto;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
   }
-}
 
-@media (max-width: 425px) {
-  .hero-name {
-    font-size: 2rem;
-  }
   .profile-img {
     width: 180px;
     height: 180px;
   }
-  .circle-bg {
-    width: 200px;
-    height: 200px;
-  }
 }
-
-/* HERO SECTION */
-.hero-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px 10%;
-  gap: 40px;
-}
-
-/* LEFT SIDE TEXT */
-.hero-left {
-  flex: 1;
-}
-
-.hero-intro {
-  font-size: 1.3rem;
-  color: #4a3aff;
-  margin-bottom: 10px;
-}
-
-.hero-name {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.hero-role {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.contact-btn {
-  background: #4a3aff;
-  color: #fff;
-  padding: 10px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.contact-btn:hover {
-  background: #2c23d3;
-}
-
-/* RIGHT SIDE IMAGE */
-.hero-right {
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circle-bg {
-  width: 330px;
-  height: 330px;
-  background: #4a3aff;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-}
-
-.profile-img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 8px solid white;
-  position: relative;
-  z-index: 2;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 900px) {
-  .hero-wrapper {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .hero-right {
-    margin-bottom: 20px;
-  }
-
-  .circle-bg {
-    width: 260px;
-    height: 260px;
-  }
-
-  .profile-img {
-    width: 240px;
-    height: 240px;
-  }
-
-  .hero-name {
-    font-size: 2.2rem;
-  }
-
-  .hero-role {
-    font-size: 1rem;
-  }
-
-  .contact-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-}
-
-/* FIX FOR EXTRA SMALL DEVICES */
-@media (max-width: 450px) {
-  .circle-bg {
-    width: 220px;
-    height: 220px;
-  }
-
-  .profile-img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-name {
-    font-size: 1.9rem;
-  }
-}
-
