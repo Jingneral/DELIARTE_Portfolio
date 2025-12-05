@@ -1,0 +1,143 @@
+/* ABOUT SECTION */
+.about-section {
+  position: relative;
+  background: #160e38; /* same theme color */
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT IMAGE */
+.about-image {
+  width: 340px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* RIGHT SIDE CONTENT */
+.about-content {
+  z-index: 2;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  color: #C3B9FF;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #e4e4e4;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 550px;
+}
+
+/* STATS */
+.about-stats {
+  display: flex;
+  gap: 50px;
+}
+
+.about-stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #9176FF;
+}
+
+.about-stat-label {
+  font-size: 1rem;
+  color: #d4d4d4;
+  margin-top: -5px;
+}
+
+/* BACKGROUND SHAPES */
+.about-bg-shape {
+  position: absolute;
+  right: -150px;
+  top: 80px;
+  width: 380px;
+  height: 380px;
+  background: rgba(114, 88, 255, 0.25);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.about-dot-pattern {
+  position: absolute;
+  left: -120px;
+  bottom: 0;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  filter: blur(30px);
+  z-index: 1;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 2.1rem;
+  }
+
+  .about-image {
+    width: 300px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    margin-top: 20px;
+  }
+
+  .about-image {
+    width: 280px;
+    height: 350px;
+  }
+
+  .about-stats {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .about-stat-number {
+    font-size: 2rem;
+  }
+
+  .about-image {
+    width: 240px;
+    height: 310px;
+  }
+}

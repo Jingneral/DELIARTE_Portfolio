@@ -36,3 +36,259 @@
     transform: rotate(360deg);
   }
 }
+/* HERO BACKGROUND */
+.hero-container {
+  background: linear-gradient(to right, #3b82f6, #4f46e5);
+}
+
+/* TYPING ANIMATION */
+.typing {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+  animation: typing 3.5s steps(30, end) forwards, blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 320px; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* PROFILE IMAGE fix */
+.profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* --------------------------
+   HERO BACKGROUND GRADIENT
+--------------------------- */
+.hero-container {
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 50%, #312e81 100%);
+}
+
+/* --------------------------
+   TYPING ANIMATION
+--------------------------- */
+.typing {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+  animation: typing 3.2s steps(30, end) forwards, blink .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 330px; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* --------------------------
+   FLOATING ANIMATED SHAPES
+--------------------------- */
+.floating-shape {
+  position: absolute;
+  filter: blur(40px);
+  opacity: 0.35;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 180px;
+  height: 180px;
+  background: #60a5fa;
+  top: 10%;
+  right: -50px;
+  animation-duration: 9s;
+}
+
+.shape2 {
+  width: 140px;
+  height: 140px;
+  background: #818cf8;
+  bottom: 15%;
+  left: -40px;
+  animation-duration: 11s;
+}
+
+.shape3 {
+  width: 120px;
+  height: 120px;
+  background: #6366f1;
+  top: 40%;
+  left: 30%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-25px) translateX(15px); }
+}
+
+/* --------------------------
+   SOFT GLOW BEHIND PROFILE
+--------------------------- */
+.profile-wrapper {
+  position: relative;
+}
+
+.glow-circle {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.5), transparent 70%);
+  top: -10%;
+  left: -10%;
+  filter: blur(35px);
+  z-index: 0;
+}
+
+/* --------------------------
+   FADE-IN ANIMATIONS
+--------------------------- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s forwards ease-out;
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* ===== Left Content ===== */
+.hero-left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.hero-intro {
+  font-size: 22px;
+  font-weight: 600;
+  color: #6c4dd4;
+}
+
+.hero-name {
+  font-size: 60px;
+  font-weight: 800;
+  margin: 10px 0;
+  color: #1d1b49;
+}
+
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #6c4dd4;
+  animation: typing 3s steps(24) infinite, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.hero-role {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #444;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.contact-btn {
+  background: #6c4dd4;
+  padding: 14px 32px;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #5437c2;
+}
+
+/* ===== Right Image Area ===== */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 320px;
+  margin-top: 30px;
+}
+
+.circle-bg {
+  width: 360px;
+  height: 360px;
+  background: #6c4dd4;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  z-index: 1;
+}
+
+.profile-img {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  border: 6px solid white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 950px) {
+  .hero-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .hero-name {
+    font-size: 45px;
+  }
+
+  .circle-bg {
+    margin-bottom: 20px;
+    right: 0;
+  }
+}
+
+
+
+
+
