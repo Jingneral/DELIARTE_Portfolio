@@ -25,7 +25,11 @@ const Hero = () => {
       {/* IMAGE SECTION */}
       <div className="hero-right">
         <div className="circle-bg"></div>
-        <img src={profile} alt="General Carlo Deliarte" className="profile-img" />
+        <img
+          src={profile}
+          alt="General Carlo Deliarte"
+          className="profile-img"
+        />
       </div>
     </section>
   );

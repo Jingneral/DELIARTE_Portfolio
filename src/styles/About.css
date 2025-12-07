@@ -1,143 +1,137 @@
-/* ABOUT SECTION */
 .about-section {
   position: relative;
-  background: #160e38; /* same theme color */
+  background: #3b1c70;
   overflow: hidden;
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  z-index: 1;
 }
 
+/* FIX: Make container ALWAYS stay above shapes */
 .about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  z-index: 3;
 }
 
-/* LEFT IMAGE */
+/* IMAGE */
 .about-image {
-  width: 340px;
-  height: 420px;
+  width: 280px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  border-radius: 20px;
+  border: 4px solid white;
+  z-index: 4;
 }
 
-/* RIGHT SIDE CONTENT */
-.about-content {
-  z-index: 2;
-}
-
+/* TEXT */
 .about-subtitle {
   font-size: 1.2rem;
-  color: #C3B9FF;
-  margin-bottom: 10px;
+  font-weight: 600;
+  color: #d0b7ff;
+  margin-bottom: 8px;
 }
 
 .about-title {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
   line-height: 1.3;
-  margin-bottom: 15px;
 }
 
+/* DESCRIPTION */
 .about-description {
-  font-size: 1.1rem;
-  color: #e4e4e4;
-  line-height: 1.7;
-  margin-bottom: 25px;
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
   max-width: 550px;
 }
 
 /* STATS */
-.about-stats {
-  display: flex;
-  gap: 50px;
-}
-
 .about-stat-number {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #9176FF;
+  color: #b28aff;
 }
 
-.about-stat-label {
-  font-size: 1rem;
-  color: #d4d4d4;
-  margin-top: -5px;
-}
+/* -----------------------------
+   FIXED BACKGROUND SHAPES
+------------------------------ */
 
-/* BACKGROUND SHAPES */
+/* CIRCLE */
 .about-bg-shape {
   position: absolute;
   right: -150px;
-  top: 80px;
-  width: 380px;
-  height: 380px;
-  background: rgba(114, 88, 255, 0.25);
+  top: -80px;
+  width: 550px;
+  height: 550px;
   border-radius: 50%;
-  filter: blur(40px);
-  z-index: 1;
+  background: #5a2ea6;
+  z-index: 1;      /* Behind content */
+  opacity: 0.85;
 }
 
+/* DOTS */
 .about-dot-pattern {
   position: absolute;
-  left: -120px;
-  bottom: 0;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 50%;
-  filter: blur(30px);
+  right: 30px;
+  bottom: 40px;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(white 2px, transparent 2px);
+  background-size: 12px 12px;
+  opacity: 0.2;
   z-index: 1;
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-  .about-title {
-    font-size: 2.1rem;
+/* -----------------------------
+   RESPONSIVE FIXES
+------------------------------ */
+
+/* TABLET */
+@media (max-width: 950px) {
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-bg-shape {
+    width: 400px;
+    height: 400px;
+    right: -120px;
+    top: -40px;
+  }
+
+  .about-dot-pattern {
+    width: 100px;
+    height: 100px;
+    right: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .about-section {
+    padding: 3rem 1rem;
   }
 
   .about-image {
+    width: 220px;
+    height: 260px;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-bg-shape {
     width: 300px;
-    height: 380px;
-  }
-}
-
-@media (max-width: 900px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
+    height: 300px;
+    right: -100px;
+    top: -20px;
   }
 
-  .about-content {
-    margin-top: 20px;
-  }
-
-  .about-image {
-    width: 280px;
-    height: 350px;
-  }
-
-  .about-stats {
-    justify-content: center;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 500px) {
-  .about-title {
-    font-size: 1.8rem;
-  }
-
-  .about-description {
-    font-size: 1rem;
-  }
-
-  .about-stat-number {
-    font-size: 2rem;
-  }
-
-  .about-image {
-    width: 240px;
-    height: 310px;
+  .about-dot-pattern {
+    width: 80px;
+    height: 80px;
   }
 }
